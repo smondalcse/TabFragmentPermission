@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
 
     private static final int CAMERA_PERMISSION_CODE = 121;
+    private static final int LOCATION_PERMISSION_CODE = 100;
     private static final int CAMERA_REQUEST = 10;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -98,6 +99,15 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "onRequestPermissionsResult: " + frag.getTag());
                 }
             }
+        } else if (requestCode == LOCATION_PERMISSION_CODE){
+            for (Fragment frag : getSupportFragmentManager().getFragments()) {
+                if (frag != null) {
+                    frag.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                    Log.i(TAG, "onRequestPermissionsResult: " + frag.getTag());
+                }
+            }
+        } else {
+            Log.i(TAG, "onRequestPermissionsResult: Not match request code");
         }
 
     }

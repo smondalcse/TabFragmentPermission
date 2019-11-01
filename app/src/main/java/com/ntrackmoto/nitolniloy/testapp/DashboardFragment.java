@@ -101,7 +101,7 @@ public class DashboardFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        Log.i(TAG, "onRequestPermissionsResult: ");
+        Log.i(TAG, "onRequestPermissionsResult: dashboard. camera persmission");
 
         if (requestCode == CAMERA_PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
